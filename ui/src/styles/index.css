@@ -1,13 +1,15 @@
 @import './reset.css';
 @import './variables/global.css';
+@import './variables/untitled-ui.css';
 
 .pageWrapper {
   height: 100%;
-  padding-top: var(--vkui_internal--panel_header_height);
+  padding-left: var(--sidebar-width);
 }
 
 .marqueeOffset {
-  padding-top: calc(var(--vkui_internal--panel_header_height) + var(--marquee-height));
+  padding-top: var(--marquee-height);
+  padding-left: var(--sidebar-width);
 }
 
 body {

@@ -1,16 +1,16 @@
 .marquee {
-  position: absolute;
-  top: var(--vkui_internal--panel_header_height);
-  left: 50%;
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
   transform: none;
 
   overflow-x: hidden;
   display: flex;
   flex-direction: row;
 
-  width: 100vw;
+  width: calc(100vw - var(--sidebar-width));
   height: var(--marquee-height);
-  margin-left: -50vw;
+  margin-left: 0;
 }
 
 .text {

@@ -12,8 +12,9 @@ import {
 } from '@vkontakte/icons'
 
 import { WarningModal } from '@/components/ui/modals'
-import { DynamicLogo } from '@/components/lib/dynamic-logo'
 import { ConditionalRender } from '@/components/lib/conditional-render'
+
+import DarthVaderIcon from '@/assets/darth-vader.svg?react'
 
 import { useGetAuthUrl } from '@/lib/hooks/use-get-auth-url.hook'
 import { useGetAuthDocs } from '@/lib/hooks/use-get-auth-docs.hook'
@@ -45,55 +46,68 @@ export const Header = () => {
   }
 
   return (
-    <header className={styles.header} id='mainPageHeader'>
+    <aside className={styles.header} id='mainPageHeader'>
       <div className={styles.leftSide}>
         <Link className={styles.logoLink} to={getMainRoute()}>
           <Tappable activeMode='opacity' focusVisibleMode='outside' hoverMode='opacity' onClick={() => {}}>
-            <DynamicLogo className={styles.logo} height={32} width={120} />
+            <span className={styles.brand}>
+              <DarthVaderIcon className={styles.brandIcon} height={32} width={32} />
+              <span className={styles.brandName}>darthv</span>
+            </span>
           </Tappable>
         </Link>
         <ConditionalRender conditions={[!!additionalUrl?.length]}>
           <Link className={styles.navLink} to={additionalUrl || ''}>
-            <Button before={<Icon56WebDeviceOutline height={28} width={28} />} mode='tertiary' size='l'>
+            <Button
+              align='left'
+              before={<Icon56WebDeviceOutline height={28} width={28} />}
+              mode='tertiary'
+              size='l'
+              stretched
+            >
               {t('Browsers')}
             </Button>
           </Link>
         </ConditionalRender>
         <Link className={styles.navLink} to={getDevicesRoute()}>
-          <Button before={<Icon28DevicesOutline />} mode='tertiary' size='l'>
+          <Button align='left' before={<Icon28DevicesOutline />} mode='tertiary' size='l' stretched>
             {t('Devices')}
           </Button>
         </Link>
         <Link className={styles.navLink} to={getSettingsRoute()}>
-          <Button before={<Icon28SettingsOutline />} mode='tertiary' size='l'>
+          <Button align='left' before={<Icon28SettingsOutline />} mode='tertiary' size='l' stretched>
             {t('Settings')}
           </Button>
         </Link>
       </div>
       <div className={styles.rightSide}>
         <Button
+          align='left'
           before={<Icon16MailOutline />}
           Component='a'
           disabled={!authContact}
           href={authContact}
           mode='tertiary'
           size='m'
+          stretched
           target='_blank'
         >
           {t('DeviceHub Support')}
         </Button>
         <Button
+          align='left'
           before={<Icon16HelpOutline />}
           Component='a'
           disabled={!authDocs}
           href={authDocs}
           mode='tertiary'
           size='m'
+          stretched
           target='_blank'
         >
           {t('Help')}
         </Button>
-        <Button before={<Icon16DoorEnterArrowRightOutline />} mode='tertiary' size='m' onClick={onLogout}>
+        <Button align='left' before={<Icon16DoorEnterArrowRightOutline />} mode='tertiary' size='m' stretched onClick={onLogout}>
           {t('Logout')}
         </Button>
       </div>
@@ -107,6 +121,6 @@ export const Header = () => {
           window.location.assign(getMainRoute())
         }}
       />
-    </header>
+    </aside>
   )
 }
