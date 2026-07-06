@@ -18,6 +18,14 @@ export const RequireAuth = observer(() => {
       const jwt = params.get('jwt')
 
       if (!jwt) {
+        // In mock mode there is no real backend to authenticate against,
+        // so we log in automatically with a placeholder token to showcase the UI.
+        if (import.meta.env.MODE === 'mock') {
+          authStore.login('mock-jwt-token')
+
+          return
+        }
+
         window.location.assign(`${variablesConfig[import.meta.env.MODE].openStfApiHostUrl}${getAuthRoute()}`)
 
         return
