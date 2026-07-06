@@ -7,17 +7,17 @@
  */
 
 .vkui--vkCom--dark {
-  /* Untitled UI grey ramp */
-  --uui-bg: #0c0e12; /* page background */
-  --uui-surface: #13161b; /* elevated cards / content */
-  --uui-surface-2: #191d24; /* secondary surfaces / rows hover */
-  --uui-surface-3: #22262f; /* tertiary / controls */
-  --uui-border: #22262f; /* solid separators */
-  --uui-border-soft: rgb(255 255 255 / 8%); /* subtle hairlines */
-  --uui-text: #f7f7f7; /* primary text */
-  --uui-text-2: #cecfd2; /* secondary text */
-  --uui-text-3: #94979c; /* muted text */
-  --uui-text-4: #85888e; /* subhead / placeholders */
+  /* Untitled UI grey ramp — near-black */
+  --uui-bg: #050506; /* page background (almost pure black) */
+  --uui-surface: #0c0d0f; /* elevated cards / content */
+  --uui-surface-2: #131417; /* secondary surfaces / rows hover */
+  --uui-surface-3: #1b1d21; /* tertiary / controls */
+  --uui-border: #1c1d21; /* solid separators */
+  --uui-border-soft: rgb(255 255 255 / 6%); /* subtle hairlines */
+  --uui-text: #fafafa; /* primary text */
+  --uui-text-2: #d0d1d4; /* secondary text */
+  --uui-text-3: #8f9298; /* muted text */
+  --uui-text-4: #7a7d83; /* subhead / placeholders */
   --uui-accent: #6c8ff5; /* refined brand blue */
   --uui-accent-strong: #528bff;
 

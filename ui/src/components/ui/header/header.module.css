@@ -33,6 +33,25 @@
   display: block;
 }
 
+.brand {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.brandIcon {
+  display: block;
+  flex: 0 0 auto;
+  color: var(--vkui--color_text_primary);
+}
+
+.brandName {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--vkui--color_text_primary);
+}
+
 .navLink {
   display: block;
   text-decoration: none;

@@ -12,8 +12,9 @@ import {
 } from '@vkontakte/icons'
 
 import { WarningModal } from '@/components/ui/modals'
-import { DynamicLogo } from '@/components/lib/dynamic-logo'
 import { ConditionalRender } from '@/components/lib/conditional-render'
+
+import DarthVaderIcon from '@/assets/darth-vader.svg?react'
 
 import { useGetAuthUrl } from '@/lib/hooks/use-get-auth-url.hook'
 import { useGetAuthDocs } from '@/lib/hooks/use-get-auth-docs.hook'
@@ -49,7 +50,10 @@ export const Header = () => {
       <div className={styles.leftSide}>
         <Link className={styles.logoLink} to={getMainRoute()}>
           <Tappable activeMode='opacity' focusVisibleMode='outside' hoverMode='opacity' onClick={() => {}}>
-            <DynamicLogo className={styles.logo} height={32} width={140} />
+            <span className={styles.brand}>
+              <DarthVaderIcon className={styles.brandIcon} height={32} width={32} />
+              <span className={styles.brandName}>darthv</span>
+            </span>
           </Tappable>
         </Link>
         <ConditionalRender conditions={[!!additionalUrl?.length]}>
