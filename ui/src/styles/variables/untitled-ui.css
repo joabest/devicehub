@@ -1,0 +1,76 @@
+/*
+ * Untitled UI — dark theme layer.
+ * Overrides VKUI's dark color scheme tokens (platform: vkcom -> `.vkui--vkCom--dark`)
+ * to reproduce the near-black "Untitled UI" aesthetic across the whole app
+ * without touching component logic. Only design tokens are re-mapped, so every
+ * VKUI surface (header, cards, tables, inputs, buttons) inherits the new look.
+ */
+
+.vkui--vkCom--dark {
+  /* Untitled UI grey ramp */
+  --uui-bg: #0c0e12; /* page background */
+  --uui-surface: #13161b; /* elevated cards / content */
+  --uui-surface-2: #191d24; /* secondary surfaces / rows hover */
+  --uui-surface-3: #22262f; /* tertiary / controls */
+  --uui-border: #22262f; /* solid separators */
+  --uui-border-soft: rgb(255 255 255 / 8%); /* subtle hairlines */
+  --uui-text: #f7f7f7; /* primary text */
+  --uui-text-2: #cecfd2; /* secondary text */
+  --uui-text-3: #94979c; /* muted text */
+  --uui-text-4: #85888e; /* subhead / placeholders */
+  --uui-accent: #6c8ff5; /* refined brand blue */
+  --uui-accent-strong: #528bff;
+
+  /* Backgrounds */
+  --vkui--color_background: var(--uui-bg);
+  --vkui--color_background_content: var(--uui-surface);
+  --vkui--color_background_secondary: var(--uui-surface-2);
+  --vkui--color_background_tertiary: var(--uui-surface-3);
+  --vkui--color_background_modal: var(--uui-surface);
+  --vkui--color_background_contrast: var(--uui-surface);
+  --vkui--color_field_background: var(--uui-surface);
+  --vkui--color_search_field_background: var(--uui-surface-3);
+  --vkui--color_header_background: var(--uui-bg);
+  --vkui--color_segmented_control: var(--uui-surface-3);
+  --vkui--color_modal_card_background: var(--uui-surface);
+
+  /* Text */
+  --vkui--color_text_primary: var(--uui-text);
+  --vkui--color_text_secondary: var(--uui-text-3);
+  --vkui--color_text_subhead: var(--uui-text-4);
+  --vkui--color_text_tertiary: var(--uui-text-4);
+  --vkui--color_text_contrast: var(--uui-text);
+
+  /* Icons */
+  --vkui--color_icon_primary: var(--uui-text-2);
+  --vkui--color_icon_secondary: var(--uui-text-3);
+  --vkui--color_icon_tertiary: var(--uui-text-4);
+  --vkui--color_icon_medium: var(--uui-text-3);
+
+  /* Separators / borders */
+  --vkui--color_separator_primary: var(--uui-border);
+  --vkui--color_separator_secondary: var(--uui-border);
+  --vkui--color_separator_primary_alpha: var(--uui-border-soft);
+  --vkui--color_image_border_alpha: var(--uui-border-soft);
+  --vkui--color_field_border_alpha: var(--uui-border-soft);
+
+  /* Accent */
+  --vkui--color_accent_blue: var(--uui-accent);
+  --vkui--color_background_accent: var(--uui-accent);
+  --vkui--color_background_accent_themed: var(--uui-accent);
+  --vkui--color_stroke_accent: var(--uui-accent);
+  --vkui--color_icon_accent: var(--uui-accent);
+  --vkui--color_text_link: var(--uui-accent);
+  --vkui--color_text_link_themed: var(--uui-accent);
+
+  /* Softer, more modern rounding to match Untitled UI cards & controls */
+  --vkui--size_border_radius--regular: 8px;
+  --vkui--size_border_radius_paper--regular: 12px;
+  --vkui--size_border_radius_promo--regular: 16px;
+}
+
+/* Page background follows the darkest grey so cards visibly float above it */
+.vkui--vkCom--dark,
+.vkui--vkCom--dark body {
+  background-color: var(--uui-bg);
+}

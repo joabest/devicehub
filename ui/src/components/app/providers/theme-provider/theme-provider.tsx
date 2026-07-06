@@ -7,7 +7,7 @@ import type { ReactNode } from 'react'
 
 export const LOCAL_STORAGE_THEME_KEY = 'theme'
 
-const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) ?? 'system'
+const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) ?? 'dark'
 
 type ThemeProviderProps = {
   children: ReactNode

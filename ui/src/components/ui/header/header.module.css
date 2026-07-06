@@ -10,8 +10,8 @@
   width: 100%;
   height: var(--vkui_internal--panel_header_height);
 
-  background: var(--vkui--color_background_content);
-  border-bottom: 1px solid var(--vkui--color_image_border_alpha);
+  background: var(--vkui--color_background);
+  border-bottom: 1px solid var(--vkui--color_separator_primary);
 }
 
 .leftSide {
